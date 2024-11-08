@@ -44,29 +44,6 @@
 }
 
 
-/* 3 section */
-/* .heading {
-    color: white;
-}
-
-.explore {
-    background: url(https://www.niviasports.com/cdn/shop/files/Background_Website_1920_X_633.jpg?v=1717828608&width=1944);
-}
-
-.card {
-    color: white;
-}
-
-.video-btn {
-    background: black;
-    color: white;
-    padding: 17px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    top: 201px;
-    left: 46%;
-} */
 /* 2 */
 .video-container {
   position: relative;
@@ -123,3 +100,32 @@ body {
   object-fit: cover; /* Maintain aspect ratio when scaling */
 }
 
+/* 4 */
+
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the min width as necessary */
+  gap: 1rem; /* Space between cards */
+}
+
+.card {
+  border: 1px solid #ccc; /* Border for visibility */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow */
+  text-align: center; /* Center the text */
+  /* height: 349px; */
+}
+
+.card img {
+  width: 100%; /* Responsive image */
+  height: 349px;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.explore-container{
+max-width: 1280px;
+width: 100%;
+margin: auto;
+}
