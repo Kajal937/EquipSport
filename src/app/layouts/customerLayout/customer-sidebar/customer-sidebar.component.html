@@ -1,0 +1,52 @@
+<!-- <aside class="sidebar flex flex-col items-start w-[250px] h-[80vh] bg-white text-gray-800 p-5 shadow-md border-r border-gray-300">
+    <ul class="sidebar-nav space-y-4 w-full">
+      <li>
+        <a routerLink="/customer/orders" routerLinkActive="active" class="block px-6 py-3 text-lg text-gray-800 hover:underline hover:text-blue-600 transition-all duration-300">My Orders</a>
+      </li>
+     
+      <li>
+        <a routerLink="/customer/profile" routerLinkActive="active" class="block px-6 py-3 text-lg text-gray-800 hover:underline hover:text-blue-600 transition-all duration-300">Profile Settings</a>
+      </li>
+      <li>
+        <a routerLink="/customer/profile" routerLinkActive="active" class="block px-6 py-3 text-lg text-gray-800 hover:underline hover:text-blue-600 transition-all duration-300">Chats</a>
+      </li> -->
+
+
+      <!-- <li>
+        <a (click)="logout()" class="block px-6 py-3 text-lg text-gray-800 hover:underline hover:text-blue-600 transition-all duration-300">Logout</a>
+      </li> -->
+    <!-- </ul>
+  </aside> -->
+
+
+  <!-- Parent container using Flexbox -->
+  
+
+  <!-- Parent container using Flexbox -->
+<div class="flex min-h-screen">
+
+    <!-- Sidebar section (fixed on the left) -->
+    <aside class="sidebar w-[250px] h-[80vh] bg-white text-gray-800 p-5 shadow-md border-r border-gray-300 fixed top-0 left-0">
+      <ul class="sidebar-nav space-y-4 w-full">
+        <li>
+          <a routerLink="/customer/orders" routerLinkActive="active" class="block px-6 py-3 text-lg text-gray-800 hover:underline hover:text-blue-600 transition-all duration-300">My Orders</a>
+        </li>
+        <li>
+          <a routerLink="/customer/profile" routerLinkActive="active" class="block px-6 py-3 text-lg text-gray-800 hover:underline hover:text-blue-600 transition-all duration-300">Profile Settings</a>
+        </li>
+        <li>    
+          <a routerLink="/customer/profile" routerLinkActive="active" class="block px-6 py-3 text-lg text-gray-800 hover:underline hover:text-blue-600 transition-all duration-300">Chats</a>
+        </li>
+      </ul>
+    </aside>
+    
+    <!-- Main Content area (right side, scrollable if needed) -->
+    <div class="flex-1 ml-[250px] p-5">
+      <!-- These should be inside the content div -->
+      <app-customer-header></app-customer-header>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </div>
+  
+  </div>
+  

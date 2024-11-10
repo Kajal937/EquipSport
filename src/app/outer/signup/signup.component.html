@@ -1,67 +1,63 @@
-<form class="sign-container" [formGroup]="signUpForm" (ngSubmit)="signUpUser()">
-  <h1 class="text-center">Sign Up</h1>
+<form class="sign-container mt-[80px] !mt-[80px]" [formGroup]="signUpForm" (ngSubmit)="signUpUser()">
+<h1 class="text-center">Sign Up</h1>
 
-  <div>
-    <label for="firstname">First Name*</label><br>
-    <input formControlName="firstname" class="sign-input focus:outline-none" type="text" id="firstname" placeholder="First Name" />
-    <span *ngIf="signUpForm.get('firstname')?.invalid && signUpForm.get('firstname')?.touched" class="text-red-500">The name field is required.</span>
-  </div>
+<div>
+  <label for="firstname">First Name*</label><br>
+  <input formControlName="firstname" class="sign-input focus:outline-none" type="text" id="firstname" placeholder="First Name" />
+  <span *ngIf="signUpForm.get('firstname')?.invalid && signUpForm.get('firstname')?.touched" class="text-red-500">The name field is required.</span>
+</div>
 
-  <div>
-    <label for="lastname">Last Name*</label><br>
-    <input formControlName="lastname" class="sign-input focus:outline-none" type="text" id="lastname" placeholder="Last Name" />
-    <span *ngIf="signUpForm.get('lastname')?.invalid && signUpForm.get('lastname')?.touched" class="text-red-500">The last name field is required.</span>
-  </div>
+<div>
+  <label for="lastname">Last Name*</label><br>
+  <input formControlName="lastname" class="sign-input focus:outline-none" type="text" id="lastname" placeholder="Last Name" />
+  <span *ngIf="signUpForm.get('lastname')?.invalid && signUpForm.get('lastname')?.touched" class="text-red-500">The last name field is required.</span>
+</div>
 
-  <div>
-    <label for="email">Email*</label><br>
-    <input formControlName="email" class="sign-input focus:outline-none" type="email" id="email" placeholder="Email" />
-    <span *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-red-500">
-      The email is not valid or is required.
-    </span>
-  </div>
+<div>
+  <label for="email">Email*</label><br>
+  <input formControlName="email" class="sign-input focus:outline-none" type="email" id="email" placeholder="Email" />
+  <span *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-red-500">
+    The email is not valid or is required.
+  </span>
+</div>
 
-  <div>
-    <label for="gender">Gender*</label><br>
-    <select formControlName="gender" class="sign-input focus:outline-none" id="gender">
-      <option value="" disabled>Select Gender</option>
-      <option value="female">Female</option>
-      <option value="male">Male</option>
-      <option value="other">Other</option>
-    </select>
-    <span *ngIf="signUpForm.get('gender')?.invalid && signUpForm.get('gender')?.touched" class="text-red-500">The gender field is required.</span>
-  </div>
+<div>
+  <label for="gender">Gender*</label><br>
+  <select formControlName="gender" class="sign-input focus:outline-none" id="gender">
+    <option value="" disabled>Select Gender</option>
+    <option value="female">Female</option>
+    <option value="male">Male</option>
+    <option value="other">Other</option>
+  </select>
+  <span *ngIf="signUpForm.get('gender')?.invalid && signUpForm.get('gender')?.touched" class="text-red-500">The gender field is required.</span>
+</div>
 
-  <div>
-    <label for="mobileNumber">Mobile Number*</label><br>
-    <input formControlName="mobileNumber" class="sign-input focus:outline-none" type="tel" id="mobileNumber" placeholder="Mobile Number" />
-    <span *ngIf="signUpForm.get('mobileNumber')?.invalid && signUpForm.get('mobileNumber')?.touched" class="text-red-500">
-      Enter a valid 10-digit mobile number.
-    </span>
-  </div>
+<div>
+  <label for="mobileNumber">Mobile Number*</label><br>
+  <input formControlName="mobileNumber" class="sign-input focus:outline-none" type="tel" id="mobileNumber" placeholder="Mobile Number" />
+  <span *ngIf="signUpForm.get('mobileNumber')?.invalid && signUpForm.get('mobileNumber')?.touched" class="text-red-500">
+    Enter a valid 10-digit mobile number.
+  </span>
+</div>
 
-  <div>
-    <label for="password">Password*</label><br>
-    <input formControlName="password" class="sign-input focus:outline-none" type="password" id="password" placeholder="Password" />
-    <span *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-red-500">
-      Password must be at least 6 characters long.
-    </span>
-  </div>
+<div>
+  <label for="password">Password*</label><br>
+  <input formControlName="password" class="sign-input focus:outline-none" type="password" id="password" placeholder="Password" />
+  <span *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-red-500">
+    Password must be at least 6 characters long.
+  </span>
+</div>
 
+<div>
+  <label for="roleId">RoleId*</label>
+  <select formControlName="roleId" class="sign-input focus:outline-none" id="roleId">
+    <option value="" disabled>Select RoleId</option>
+    <option *ngFor="let role of roles" [value]="role.value">{{role.displayName}}</option>
+  </select>
+  <span *ngIf="signUpForm.get('roleId')?.invalid && signUpForm.get('roleId')?.touched" class="text-red-500">
+    Role is required
+  </span>
+</div>
 
-
-  <div>
-    <label for="roleId">RoleId*</label>
-    <select formControlName="roleId" class="sign-input focus:outline-none" id="roleId">
-      <option value="" disabled>Select RoleId</option>
-      <option *ngFor="let role of roles" [value]="role.value">{{role.displayName}}</option>
-    </select>
-    <span *ngIf="signUpForm.get('roleId')?.invalid && signUpForm.get('roleId')?.touched" class="text-red-500">
-      Role is required
-    </span>
-  </div>
-  
-
-  
-  <button type="submit" class="bg-[#E03C31] text-white mt-[28px]">Sign Up</button>
+<button type="submit" class="bg-[#E03C31] text-white mt-[28px]">Sign Up</button>
 </form>
