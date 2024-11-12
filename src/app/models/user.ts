@@ -19,3 +19,13 @@ export interface User {
     roleId: number; // Make sure this is a number
   }
   
+
+  export interface Product {
+    id: number;
+    name: string;
+    category: string;
+    price: number;
+    status: string;
+    imageUrl: string;
+  }
+  

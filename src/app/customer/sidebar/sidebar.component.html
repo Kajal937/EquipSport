@@ -9,8 +9,8 @@
     </ul>
   </aside> -->
 
-   <!-- <li><a (click)="logout()">Logout</a></li> -->
-  
+<!-- <li><a (click)="logout()">Logout</a></li> -->
+
 <!-- 
    <aside class="sidebar flex flex-col items-start w-[250px] h-[80vh] bg-white text-gray-800 p-5 shadow-md border-r border-gray-300">
     <ul class="sidebar-nav space-y-4 w-full">
@@ -26,27 +26,33 @@
     </ul>
   </aside>
    -->
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <aside class="w-[250px]  bg-gray-100 text-gray-800 p-5 shadow-md border-r border-gray-300 whitespace-nowrap">
+    <ul class="space-y-4 p-0">
+      <li>
+        <a routerLink="/customer/orders" routerLinkActive="active"
+          class="block px-6 py-3 text-lg hover:underline hover:text-blue-600 transition-all duration-300 text-decoration-none">
+          My Orders
+        </a>
+      </li>
+      <li>
+        <a routerLink="/customer/profile" routerLinkActive="active"
+          class="block px-6 py-3 text-lg hover:underline hover:text-blue-600 transition-all duration-300 text-decoration-none">
+          Profile Settings
+        </a>
+      </li>
+      <li>
+        <a routerLink="/customer/chats" routerLinkActive="active"
+          class="block px-6 py-3 text-lg hover:underline hover:text-blue-600 transition-all duration-300 text-decoration-none">
+          Chats
+        </a>
+      </li>
+    </ul>
+  </aside>
 
-   <div class="flex h-screen">
-    <!-- Sidebar -->
-    <aside class="w-[250px] bg-white text-gray-800 p-5 shadow-md border-r border-gray-300">
-      <ul class="space-y-4">
-        <li>
-          <a routerLink="/customer/orders" routerLinkActive="active" class="block px-6 py-3 text-lg hover:underline hover:text-blue-600 transition-all duration-300">My Orders</a>
-        </li>
-        <li>
-          <a routerLink="/customer/profile" routerLinkActive="active" class="block px-6 py-3 text-lg hover:underline hover:text-blue-600 transition-all duration-300">Profile Settings</a>
-        </li>
-        <li>
-          <a routerLink="/customer/chats" routerLinkActive="active" class="block px-6 py-3 text-lg hover:underline hover:text-blue-600 transition-all duration-300">Chats</a>
-        </li>
-      </ul>
-    </aside>
-  
-    <!-- Main Content Area -->
-    <div class="w-[calc(100%-250px)] p-6">
-      <router-outlet></router-outlet>
-    </div>
+  <!-- Main Content Area -->
+  <div class="w-[calc(100%-250px)] p-6">
+    <router-outlet></router-outlet>
   </div>
-  
-  
+</div>

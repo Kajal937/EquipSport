@@ -1,0 +1,42 @@
+<div class="flex h-screen">
+    <!-- Sidebar (15% width) -->
+    <div class="w-1/6 bg-teal-800 text-white flex flex-col p-4">
+        <!-- Sidebar Header -->
+        <div class="m-0 mb-6">
+            <h2 class="text-[8px] font-semibold">Admin Menu</h2>
+        </div>
+        <!-- Sidebar Navigation -->
+        <nav class="flex flex-col space-y-2">
+            <a href="#dashboard" class="text-sm px-3 py-2 rounded hover:bg-teal-700 transition duration-200">Dashboard</a>
+            <a href="#users" class="text-sm px-3 py-2 rounded hover:bg-teal-700 transition duration-200">Users</a>
+            <a href="#products" class="text-sm px-3 py-2 rounded hover:bg-teal-700 transition duration-200">Products</a>
+            <a href="#orders" class="text-sm px-3 py-2 rounded hover:bg-teal-700 transition duration-200">Orders</a>
+            <a href="#payments" class="text-sm px-3 py-2 rounded hover:bg-teal-700 transition duration-200">Payments</a>
+        </nav>
+        <!-- Sidebar Footer -->
+        <div class="mt-auto pt-4 text-xs opacity-75">
+            <p>© 2024 Sports Admin</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area (85% width) -->
+    <div class="w-5/6 flex flex-col">
+        <!-- Header Section -->
+        <!-- <nav class="navbar-container bg-gray-900 p-4 flex items-center justify-between text-gray-200">
+            <div class="navbar-menu">
+                <h1 class="text-lg font-medium">Admin Panel</h1>
+            </div>
+            <div class="menu flex items-center gap-4">
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <button class="bg-red-500 px-3 py-1 rounded hover:bg-red-600 transition duration-200">Logout</button>
+            </div>
+        </nav> -->
+
+        <!-- Main Content -->
+        <div class=" flex-1">
+            <app-admin-layout-header></app-admin-layout-header>
+            <!-- Additional content goes here -->
+        </div>
+    </div>
+</div>

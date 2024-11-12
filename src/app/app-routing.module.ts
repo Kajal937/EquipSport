@@ -22,6 +22,10 @@ import { UserMangementComponent } from './admin/user-mangement/user-mangement.co
 import { ProfileComponent } from './customer/profile/profile.component';
 import { SettingsComponent } from './customer/settings/settings.component';
 import { ChatsComponent } from './customer/chats/chats.component';
+import { AdminLayoutSidebarComponent } from './layouts/adminLayout/admin-layout-sidebar/admin-layout-sidebar.component';
+import { SellerInfoComponent } from './seller/seller-info/seller-info.component';
+import { SellerProductsComponent } from './seller/seller-products/seller-products.component';
+import { AddressComponent } from './customer/address/address.component';
 
 
 // Define routes
@@ -39,41 +43,47 @@ const routes: Routes = [
     ],
   },
 
-  {
-    path: 'customer',
-    component: CustomerLayoutComponent,
-    children: [
-      { path: 'orders', component: OrdersComponent },
-      { path: 'chats', component: ChatsComponent },
-      { path: 'favourites', component: FavouritesComponent },
-      { path: 'profile', component:  ProfileComponent},
-      { path: 'settings', component: SettingsComponent },
-      { path: 'favourites', component:  FavouritesComponent},
-      { path: '', redirectTo: 'orders', pathMatch: 'full' }  // Default route for customer
-    ],
-  },
+
+// *************************************CustomerLayoutComponent*************************
+{
+  path: 'customer',
+  component: CustomerLayoutComponent,
+  children: [
+    { path: 'orders', component: OrdersComponent },
+    { path: 'address', component: AddressComponent },
+    { path: 'settings', component: SettingsComponent },
+    { path: 'chats', component: ChatsComponent },
+    // { path: 'favourites', component: FavouritesComponent },
+    // { path: 'profile', component: ProfileComponent },
+    // { path: 'settings', component: SettingsComponent },
+    { path: '', redirectTo: 'orders', pathMatch: 'full' }  // Default route for customer
+  ],
+},
+
+  // ***************************************SellerLayout*********************************
   {
     path: 'seller',
     component: SellerLayoutComponent,
     children: [
-      { path: 'seller-orders', component: SellerOrdersComponent },
-      { path: 'seller-feedbacks', component: SellerFeedbacksComponent },
-      { path: 'seller-feedbacks', component: SellerFeedbacksComponent },
-      { path: 'seller-feedbacks', component: SellerFeedbacksComponent },
+      { path: 'seller-info', component: SellerInfoComponent },
+      { path: 'seller-orders', component: SellerOrdersComponent }, // Corrected this line
+      { path: 'seller-products', component: SellerProductsComponent },
       { path: 'seller-feedbacks', component: SellerFeedbacksComponent },
       { path: '', redirectTo: 'seller-orders', pathMatch: 'full' }  // Default route for seller
-    ],
+    ]
   },
+  
 
-
-
+// *************************************AdminLayout******************************
   {
-    path: 'admin', // Route for admin layout
-    component: AdminLayoutsComponent, // Use Admin Layout
+    path: 'admin', 
+    component: AdminLayoutsComponent, 
     children: [
       { path: 'user-mangement', component: UserMangementComponent },
-      { path: '', redirectTo: 'user-mangement', pathMatch: 'full' }
-
+      // { path: '', component:  },
+      // { path: '', component:  },
+      //  { path: '', component:  },
+      { path: '', redirectTo: 'user-mangement', pathMatch: 'full' },
     ],
   },
  

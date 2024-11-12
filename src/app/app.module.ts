@@ -39,9 +39,14 @@ import { SellerOrdersComponent } from './seller/seller-orders/seller-orders.comp
 import { SellerProductsComponent } from './seller/seller-products/seller-products.component';
 import { SellerFeedbacksComponent } from './seller/seller-feedbacks/seller-feedbacks.component';
 import { UserMangementComponent } from './admin/user-mangement/user-mangement.component';
-import { SellerSidebarComponent } from './seller/seller-sidebar/seller-sidebar.component';
+// import { SellerSidebarComponent } from './seller/seller-sidebar/seller-sidebar.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { CustomerSidebarComponent } from './layouts/customerLayout/customer-sidebar/customer-sidebar.component';
+// import { AdminlayoutSidebarComponent } from './layouts/adminLayout/adminlayout-sidebar/adminlayout-sidebar.component';
+import { AdminLayoutSidebarComponent } from './layouts/adminLayout/admin-layout-sidebar/admin-layout-sidebar.component';
+import { SellerSidebarComponent } from './layouts/sellerLayout/seller-sidebar/seller-sidebar.component';
+import { SellerInfoComponent } from './seller/seller-info/seller-info.component';
+import { AddressComponent } from './customer/address/address.component';
 
 @NgModule({
   declarations: [
@@ -80,10 +85,15 @@ import { CustomerSidebarComponent } from './layouts/customerLayout/customer-side
     UserMangementComponent,
     CustomerLayoutComponent,
     SellerLayoutComponent,
-    AdminLayoutsComponent,
     SellerSidebarComponent,
+    AdminLayoutsComponent,
+    // SellerSidebarComponent,
     AdminLoginComponent,
     CustomerSidebarComponent,
+    // AdminlayoutSidebarComponent,
+    AdminLayoutSidebarComponent,
+    SellerInfoComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,

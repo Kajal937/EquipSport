@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginUser, User } from '../models/user'; 
+import { SellerProductsComponent } from '../seller/seller-products/seller-products.component';
 
 
 @Injectable({
@@ -21,4 +22,9 @@ export class DataService {
     login(data: LoginUser): Observable<any> {
         return this.http.post(`${this.apiUrl}/login`, data); // Update the URL as needed
     }
+    
+    // Fetch products from the API
+  getProducts(): Observable<SellerProductsComponent[]> {
+    return this.http.get<SellerProductsComponent[]>(`${this.apiUrl}`); // API call to fetch products
+  }
 }
