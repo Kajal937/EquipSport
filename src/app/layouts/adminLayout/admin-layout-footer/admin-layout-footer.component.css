@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
     gap: 20px;
-    padding: 40px;
+    padding: 20px;
   }
   
   .footer-section,

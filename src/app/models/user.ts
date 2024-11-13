@@ -20,9 +20,17 @@ export interface User {
   }
   
 
+   // Interface for AdminLoginUser
+   export interface AdminLoginUser {
+    email: string;
+    password: string;
+    roleId: number; // Make sure this is a number
+  }
+  
+
   export interface Product {
     id: number;
-    name: string;
+    product_name: string;
     category: string;
     price: number;
     status: string;

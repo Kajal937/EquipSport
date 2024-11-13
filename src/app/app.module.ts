@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,17 +36,18 @@ import { SellerComponent } from './seller/seller.component';
 import { SellerHeaderComponent } from './layouts/sellerLayout/seller-header/seller-header.component';
 import { SellerFooterComponent } from './layouts/sellerLayout/seller-footer/seller-footer.component';
 import { SellerOrdersComponent } from './seller/seller-orders/seller-orders.component';
-import { SellerProductsComponent } from './seller/seller-products/seller-products.component';
 import { SellerFeedbacksComponent } from './seller/seller-feedbacks/seller-feedbacks.component';
 import { UserMangementComponent } from './admin/user-mangement/user-mangement.component';
-// import { SellerSidebarComponent } from './seller/seller-sidebar/seller-sidebar.component';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { CustomerSidebarComponent } from './layouts/customerLayout/customer-sidebar/customer-sidebar.component';
-// import { AdminlayoutSidebarComponent } from './layouts/adminLayout/adminlayout-sidebar/adminlayout-sidebar.component';
 import { AdminLayoutSidebarComponent } from './layouts/adminLayout/admin-layout-sidebar/admin-layout-sidebar.component';
 import { SellerSidebarComponent } from './layouts/sellerLayout/seller-sidebar/seller-sidebar.component';
 import { SellerInfoComponent } from './seller/seller-info/seller-info.component';
 import { AddressComponent } from './customer/address/address.component';
+import { SellerProductsComponent } from './seller/seller-products/seller-products.component';
+import { AdminLoginComponent } from './outer/admin-login/admin-login.component';
+import { BallsComponent } from './admin/balls/balls.component';
+import { CricketGearComponent } from './admin/cricket-gear/cricket-gear.component';
+import { FootwearComponent } from './admin/footwear/footwear.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,6 @@ import { AddressComponent } from './customer/address/address.component';
     AboutComponent,
     HeaderComponent,
     FooterComponent,
-    // SignInComponent,
     SignupComponent,
     SignInComponent,
     CategoriesComponent,
@@ -80,20 +80,21 @@ import { AddressComponent } from './customer/address/address.component';
     SellerHeaderComponent,
     SellerFooterComponent,
     SellerOrdersComponent,
-    SellerProductsComponent,
     SellerFeedbacksComponent,
     UserMangementComponent,
     CustomerLayoutComponent,
     SellerLayoutComponent,
     SellerSidebarComponent,
     AdminLayoutsComponent,
-    // SellerSidebarComponent,
-    AdminLoginComponent,
     CustomerSidebarComponent,
-    // AdminlayoutSidebarComponent,
-    AdminLayoutSidebarComponent,
+     AdminLayoutSidebarComponent,
     SellerInfoComponent,
     AddressComponent,
+    SellerProductsComponent,
+    AdminLoginComponent, 
+    BallsComponent,
+    CricketGearComponent,
+    FootwearComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +102,8 @@ import { AddressComponent } from './customer/address/address.component';
     HttpClientModule,
     AppRoutingModule,
     CarouselModule.forRoot(),
-    BrowserAnimationsModule, // Add this line
+    BrowserAnimationsModule, 
+    FormsModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

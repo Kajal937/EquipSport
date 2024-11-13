@@ -26,6 +26,9 @@ import { AdminLayoutSidebarComponent } from './layouts/adminLayout/admin-layout-
 import { SellerInfoComponent } from './seller/seller-info/seller-info.component';
 import { SellerProductsComponent } from './seller/seller-products/seller-products.component';
 import { AddressComponent } from './customer/address/address.component';
+import { AdminLoginComponent } from './outer/admin-login/admin-login.component';
+// import { Category1Component } from './admin/category1/category1.component';
+// import { Category2Component } from './admin/category2/category2.component';
 
 
 // Define routes
@@ -39,6 +42,8 @@ const routes: Routes = [
       { path: 'contactus', component: ContactusComponent },
       { path: 'signIn', component: SignInComponent },  
       { path: 'signup', component: SignupComponent },
+      { path: 'admin-login', component: AdminLoginComponent },
+
       { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default to Home
     ],
   },
@@ -80,9 +85,9 @@ const routes: Routes = [
     component: AdminLayoutsComponent, 
     children: [
       { path: 'user-mangement', component: UserMangementComponent },
-      // { path: '', component:  },
-      // { path: '', component:  },
-      //  { path: '', component:  },
+      // { path: 'category1', component: Category1Component }, // Add category route
+      // { path: 'category2', component: Category2Component}, // Add category route
+      // { path: 'category3', component: Category3Component }, // Add category route
       { path: '', redirectTo: 'user-mangement', pathMatch: 'full' },
     ],
   },

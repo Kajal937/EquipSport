@@ -12,6 +12,7 @@ import { User } from '../../models/user';
 export class SignupComponent {
 
   roles = [
+    { displayName: 'Admin', value: 1 },
     { displayName: 'Customer', value: 2 },
     { displayName: 'Seller', value: 3 }
   ];
