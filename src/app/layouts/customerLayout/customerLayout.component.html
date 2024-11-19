@@ -1,0 +1,33 @@
+<app-customer-header></app-customer-header>
+<!-- Header Component -->
+
+<!-- Main Container with Sidebar and Content using Flexbox -->
+<div class="flex">
+  <!-- Sidebar Section (fixed on the left) -->
+  <aside class="sidebar w-[15%] h-[807px] bg-gray-100 text-gray-800 p-5 shadow-md border-r border-gray-300">
+    <ul class="sidebar-nav space-y-4 w-full p-0">
+      <!-- Sidebar Links with routing -->
+      <li>
+        <a routerLink="/customer/orders" routerLinkActive="active" class="no-underline whitespace-nowrap">My Orders</a>
+      </li>
+      <li>
+        <a routerLink="/customer/address" routerLinkActive="active" class="no-underline whitespace-nowrap">Address</a>
+      </li>
+      <li>
+        <a routerLink="/customer/settings" routerLinkActive="active" class="no-underline whitespace-nowrap">Profile Settings</a>
+      </li>
+      <li>
+        <a routerLink="/customer/chats" routerLinkActive="active" class="no-underline whitespace-nowrap">Chats</a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Area with Router Outlet for Dynamic Content -->
+  <div class="w-full p-5">
+    <router-outlet></router-outlet>
+    <!-- Displays routed content based on sidebar links -->
+  </div>
+</div>
+
+<app-customer-footer></app-customer-footer>
+<!-- Footer Component -->

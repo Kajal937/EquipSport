@@ -1,0 +1,12 @@
+/* Add any additional styling here if needed */
+.sidebar-link {
+    @apply block px-4 py-2 text-gray-200 rounded-lg transition duration-300 hover:bg-purple-600 hover:text-white;
+}
+.active-link {
+    @apply bg-purple-600 text-white;
+}
+
+
+.heading-admin{
+    font-size: 20px;
+}

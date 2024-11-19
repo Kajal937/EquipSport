@@ -1,0 +1,99 @@
+<!-- Admin Categories Table -->
+<div class="flex justify-center mb-6">
+  <button class="text-white bg-green-600 px-4 py-2 rounded" (click)="openAddModal()">
+    Add Category
+  </button>
+</div>
+
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+    <thead class="bg-gray-200 text-gray-700">
+      <tr>
+        <th class="px-6 py-3 text-left">Category ID</th>
+        <th class="px-6 py-3 text-left">Name</th>
+        <th class="px-6 py-3 text-left">Description</th>
+        <th class="px-6 py-3 text-left">Created At</th>
+        <th class="px-6 py-3 text-left">Status</th>
+        <th class="px-6 py-3 text-left">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories" class="hover:bg-gray-50">
+        <td class="px-6 py-4">{{ category.categoryId }}</td>
+        <td class="px-6 py-4">{{ category.name }}</td>
+        <td class="px-6 py-4">{{ category.description }}</td>
+        <td class="px-6 py-4">{{ category.createdAt | date }}</td>
+        <td class="px-6 py-4">{{ category.categoryStatus }}</td>
+        <td class="px-6 py-4">
+          <button (click)="openEditModal(category)" class="bg-yellow-500 text-white px-3 py-1 rounded">
+            Edit
+          </button>
+          <button (click)="deleteCategory(category.categoryId)" class="bg-red-500 text-white px-3 py-1 rounded">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal for Add/Edit Category -->
+<div *ngIf="isEditModalOpen || isAddModalOpen" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg w-full max-w-lg">
+    <h2 class="text-lg font-semibold mb-4">{{ isEditModalOpen ? 'Edit Category' : 'Add Category' }}</h2>
+    <form>
+      <div *ngIf="isEditModalOpen" class="mb-4">
+        <label for="categoryId" class="block text-sm font-medium">Category ID</label>
+        <input
+          id="categoryId"
+          type="text"
+          [(ngModel)]="selectedCategory.categoryId"
+          name="categoryId"
+          class="border border-gray-300 rounded p-2 w-full"
+          disabled
+        />
+      </div>
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium">Name</label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="selectedCategory.name"
+          name="name"
+          class="border border-gray-300 rounded p-2 w-full"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="description" class="block text-sm font-medium">Description</label>
+        <input
+          id="description"
+          type="text"
+          [(ngModel)]="selectedCategory.description"
+          name="description"
+          class="border border-gray-300 rounded p-2 w-full"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="status" class="block text-sm font-medium">Status</label>
+        <select
+          id="status"
+          [(ngModel)]="selectedCategory.categoryStatus"
+          name="status"
+          class="border border-gray-300 rounded p-2 w-full"
+        >
+          <option value="Pending">Pending</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button type="button" (click)="saveCategory()" class="bg-blue-500 text-white px-4 py-2 rounded">
+          Save
+        </button>
+        <button type="button" (click)="closeModals()" class="bg-gray-500 text-white px-4 py-2 rounded">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
