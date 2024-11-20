@@ -54,6 +54,7 @@ get roleId() {
       (response) => {
         console.log('Login successful', response);
     
+<<<<<<< HEAD
         const token = response.token; 
         localStorage.setItem('token', response.token);
 
@@ -65,6 +66,8 @@ get roleId() {
 // }
 
 
+=======
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
         if (loginUser.roleId === 1) {
           // If the user is an admin, navigate to the admin dashboard
           this.router.navigate(['admin']);

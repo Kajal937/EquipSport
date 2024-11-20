@@ -27,6 +27,7 @@ export interface User {
     roleId: number; // Make sure this is a number
   }
   
+<<<<<<< HEAD
   // export interface Product {
   //   id: number;
   //   productName: string; // Use camelCase for consistency
@@ -44,5 +45,15 @@ export interface User {
     description: string;
     createdAt: Date;
     categoryStatus: string;
+=======
+
+  export interface Product {
+    id: number;
+    product_name: string;
+    category: string;
+    price: number;
+    status: string;
+    imageUrl: string;
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
   }
   

@@ -4,12 +4,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
 import { HomeComponent } from './outer/home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AboutComponent } from './outer/about/about.component';
 import { CategoriesComponent } from './outer/categories/categories.component';
 import { DataService } from './services/data.service';
+<<<<<<< HEAD
 import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+=======
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
 import { SellerLayoutComponent } from './layouts/sellerLayout/sellerLayout.component';
 import { CustomerLayoutComponent } from './layouts/customerLayout/customerLayout.component';
 import { AdminLayoutsComponent } from './layouts/adminLayout/adminLayout.component';
@@ -42,10 +50,15 @@ import { AdminLayoutSidebarComponent } from './layouts/adminLayout/admin-layout-
 import { SellerSidebarComponent } from './layouts/sellerLayout/seller-sidebar/seller-sidebar.component';
 import { SellerInfoComponent } from './seller/seller-info/seller-info.component';
 import { AddressComponent } from './customer/address/address.component';
+<<<<<<< HEAD
+=======
+import { SellerProductsComponent } from './seller/seller-products/seller-products.component';
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
 import { AdminLoginComponent } from './outer/admin-login/admin-login.component';
 import { BallsComponent } from './admin/balls/balls.component';
 import { CricketGearComponent } from './admin/cricket-gear/cricket-gear.component';
 import { FootwearComponent } from './admin/footwear/footwear.component';
+<<<<<<< HEAD
 import { ProductsComponent } from './admin/products/products.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminCategoriesComponent } from './admin/admin-categories/admin-categories.component';
@@ -55,6 +68,8 @@ import { BasketballComponent } from './admin/basketball/basketball.component';
 
 import { provideToastr } from 'ngx-toastr';
 import { authInterceptor } from './interceptor/auth.interceptor';
+=======
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
 
 @NgModule({
   declarations: [
@@ -97,10 +112,15 @@ import { authInterceptor } from './interceptor/auth.interceptor';
      AdminLayoutSidebarComponent,
     SellerInfoComponent,
     AddressComponent,
+<<<<<<< HEAD
+=======
+    SellerProductsComponent,
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
     AdminLoginComponent, 
     BallsComponent,
     CricketGearComponent,
     FootwearComponent,
+<<<<<<< HEAD
     ProductsComponent,
     CategoriesComponent,
     OrdersComponent,
@@ -109,6 +129,8 @@ import { authInterceptor } from './interceptor/auth.interceptor';
     FootballComponent,
     CricketComponent,
     BasketballComponent,
+=======
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
   ],
   imports: [
     BrowserModule,
@@ -119,6 +141,7 @@ import { authInterceptor } from './interceptor/auth.interceptor';
     BrowserAnimationsModule, 
     FormsModule,
   ],
+<<<<<<< HEAD
   providers: [DataService,  
     provideToastr(),
     {
@@ -130,5 +153,9 @@ import { authInterceptor } from './interceptor/auth.interceptor';
   ],
   bootstrap: [AppComponent],
   
+=======
+  providers: [DataService],
+  bootstrap: [AppComponent],
+>>>>>>> 920da0ecca121bfc4e5a34516401cb364f2987f0
 })
 export class AppModule {}

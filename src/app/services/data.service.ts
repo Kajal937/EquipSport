@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AdminLoginUser, Category, LoginUser, User } from '../models/user';
+import { AdminLoginUser, LoginUser, Product, User } from '../models/user';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class DataService {
   private baseApiUrl = 'https://localhost:7232/api'; // Base URL for API endpoints
@@ -16,44 +16,36 @@ export class DataService {
     return this.http.post(`${this.baseApiUrl}/Equipment/register`, data);
   }
 
-  // For normal user login
-  loginUser(data: LoginUser): Observable<any> {
-    return this.http.post(`${this.baseApiUrl}/users/login`, data);
+  // User Login (POST request)
+ 
+// For normal user login
+loginUser(data: LoginUser): Observable<any> {
+  return this.http.post(`${this.baseApiUrl}/users/login`, data);
+}
+
+// For admin login
+loginAdmin(data: AdminLoginUser): Observable<any> {
+  return this.http.post(`${this.baseApiUrl}/Equipment/adminloginlogin`, data); // Corrected the endpoint URL
+}
+
+
+  // Get all products (GET request)
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.baseApiUrl}/seller`);
   }
 
-  // For admin login
-  loginAdmin(data: AdminLoginUser): Observable<any> {
-    return this.http.post(`${this.baseApiUrl}/Equipment/adminlogin`, data); // Corrected endpoint URL
+  // Add a new product (POST request)
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(`${this.baseApiUrl}/seller`, product);
   }
 
-
-
-
-
-
-
-
-  
-  // Category data for admin layout
-  getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${this.baseApiUrl}/AdminSeller/allcategory`);
+  // Update an existing product (PUT request)
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(`${this.baseApiUrl}/seller/${product.id}`, product);
   }
 
-  // Add a new category (POST request)
-  addCategory(category: Category): Observable<Category> {
-    return this.http.post<Category>(`${this.baseApiUrl}/AdminSeller/allcategory`, category);
-  }
-
-  // Update an existing category (PUT request)
-  updateCategory(category: Category): Observable<Category> {
-    return this.http.put<Category>(
-      `${this.baseApiUrl}/AdminSeller/allcategory/${category.categoryId}`, 
-      category
-    );
-  }
-
-  // Delete a category (DELETE request)
-  deleteCategory(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseApiUrl}/AdminSeller/allcategory/${id}`);
+  // Delete a product (DELETE request)
+  deleteProduct(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseApiUrl}/seller/${id}`);
   }
 }
