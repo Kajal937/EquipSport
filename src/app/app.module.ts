@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { HomeComponent } from './outer/home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AboutComponent } from './outer/about/about.component';
@@ -43,13 +42,11 @@ import { AdminLayoutSidebarComponent } from './layouts/adminLayout/admin-layout-
 import { SellerSidebarComponent } from './layouts/sellerLayout/seller-sidebar/seller-sidebar.component';
 import { SellerInfoComponent } from './seller/seller-info/seller-info.component';
 import { AddressComponent } from './customer/address/address.component';
-// import { SellerProductsComponent } from './seller/seller-products/seller-products.component';
 import { AdminLoginComponent } from './outer/admin-login/admin-login.component';
 import { BallsComponent } from './admin/balls/balls.component';
 import { CricketGearComponent } from './admin/cricket-gear/cricket-gear.component';
 import { FootwearComponent } from './admin/footwear/footwear.component';
 import { ProductsComponent } from './admin/products/products.component';
-import { CustomersComponent } from './admin/customers/customers.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminCategoriesComponent } from './admin/admin-categories/admin-categories.component';
 import { FootballComponent } from './admin/football/football.component';
@@ -100,13 +97,11 @@ import { authInterceptor } from './interceptor/auth.interceptor';
      AdminLayoutSidebarComponent,
     SellerInfoComponent,
     AddressComponent,
-    // SellerProductsComponent,
     AdminLoginComponent, 
     BallsComponent,
     CricketGearComponent,
     FootwearComponent,
     ProductsComponent,
-    CustomersComponent,
     CategoriesComponent,
     OrdersComponent,
     DashboardComponent,

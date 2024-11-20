@@ -33,28 +33,27 @@ export class DataService {
 
 
 
-
   
   // Category data for admin layout
   getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${this.baseApiUrl}/Admin/categories`);
+    return this.http.get<Category[]>(`${this.baseApiUrl}/AdminSeller/allcategory`);
   }
 
   // Add a new category (POST request)
   addCategory(category: Category): Observable<Category> {
-    return this.http.post<Category>(`${this.baseApiUrl}/Admin/categories`, category);
+    return this.http.post<Category>(`${this.baseApiUrl}/AdminSeller/allcategory`, category);
   }
 
   // Update an existing category (PUT request)
   updateCategory(category: Category): Observable<Category> {
     return this.http.put<Category>(
-      `${this.baseApiUrl}/Admin/categories/${category.categoryId}`, 
+      `${this.baseApiUrl}/AdminSeller/allcategory/${category.categoryId}`, 
       category
     );
   }
 
   // Delete a category (DELETE request)
   deleteCategory(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseApiUrl}/Admin/categories/${id}`);
+    return this.http.delete<void>(`${this.baseApiUrl}/AdminSeller/allcategory/${id}`);
   }
 }
